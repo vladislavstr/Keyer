@@ -28,6 +28,30 @@
 					MaterialOpacity="0.65" />
 			</ExperimentalAcrylicBorder.Material>
 		</ExperimentalAcrylicBorder>
+
+		<StackPanel>
+			<Button>
+				<PathIcon Data="{StaticResource image_edit_regular}" />
+			</Button>
+			<Button>
+				<PathIcon Data="{StaticResource image_regular}" />
+			</Button>
+			<Button>
+				<PathIcon Data="{StaticResource add_regular}" />
+			</Button>
+			<Button>
+				<PathIcon Data="{StaticResource folder_open_vertical_regular}" />
+			</Button>
+			<Button>
+				<PathIcon Data="{StaticResource heart_regular}" />
+			</Button>
+			<Button>
+				<PathIcon Data="{StaticResource history_regular}" />
+			</Button>
+			<Button>
+				<PathIcon Data="{StaticResource settings_regular}" />
+			</Button>
+		</StackPanel>
 	</Panel>
 	
 </Window>
