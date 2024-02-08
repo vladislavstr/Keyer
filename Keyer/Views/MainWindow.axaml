@@ -28,30 +28,48 @@
 					MaterialOpacity="0.65" />
 			</ExperimentalAcrylicBorder.Material>
 		</ExperimentalAcrylicBorder>
-
-		<StackPanel>
-			<Button>
-				<PathIcon Data="{StaticResource image_edit_regular}" />
-			</Button>
-			<Button>
-				<PathIcon Data="{StaticResource image_regular}" />
-			</Button>
-			<Button>
-				<PathIcon Data="{StaticResource add_regular}" />
-			</Button>
-			<Button>
-				<PathIcon Data="{StaticResource folder_open_vertical_regular}" />
-			</Button>
-			<Button>
-				<PathIcon Data="{StaticResource heart_regular}" />
-			</Button>
-			<Button>
-				<PathIcon Data="{StaticResource history_regular}" />
-			</Button>
-			<Button>
-				<PathIcon Data="{StaticResource settings_regular}" />
-			</Button>
-		</StackPanel>
+		<Grid ShowGridLines="true">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="60"/>
+				<ColumnDefinition Width="40"/>
+				<ColumnDefinition Width="300"/>
+				<ColumnDefinition Width="60"/>
+				<ColumnDefinition Width="300"/>
+				<ColumnDefinition/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="80"/>
+				<RowDefinition/>
+				<RowDefinition Height="80"/>
+				<RowDefinition Height="80"/>
+			</Grid.RowDefinitions>
+			
+			<Panel Grid.Column="0" Margin="10">
+				<StackPanel>
+					<Button>
+						<PathIcon Data="{StaticResource image_edit_regular}" />
+					</Button>
+					<Button>
+						<PathIcon Data="{StaticResource image_regular}" />
+					</Button>
+					<Button>
+						<PathIcon Data="{StaticResource add_regular}" />
+					</Button>
+					<Button>
+						<PathIcon Data="{StaticResource folder_open_vertical_regular}" />
+					</Button>
+					<Button>
+						<PathIcon Data="{StaticResource heart_regular}" />
+					</Button>
+					<Button>
+						<PathIcon Data="{StaticResource history_regular}" />
+					</Button>
+					<Button>
+						<PathIcon Data="{StaticResource settings_regular}" />
+					</Button>
+				</StackPanel>
+			</Panel>
+		</Grid>
 	</Panel>
 	
 </Window>
