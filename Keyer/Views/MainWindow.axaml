@@ -28,11 +28,6 @@
 					MaterialOpacity="0.65" />
 			</ExperimentalAcrylicBorder.Material>
 		</ExperimentalAcrylicBorder>
-		<!--<Grid ColumnDefinitions="*,*,*" RenderOptions.BitmapInterpolationMode="HighQuality">
-			<Image Grid.Column="0" Source="avares://Keyer/Assets/abstract.jpg" MaxWidth="300" />
-			<Image Grid.Column="1" Source="{Binding ImageFromBinding}" MaxWidth="300" />
-			<Image Grid.Column="2" Source="{Binding ImageFromWebsite^}" MaxWidth="300" />
-		</Grid>-->
 		
 		<Grid ShowGridLines="true">
 			<Grid.ColumnDefinitions>
@@ -71,8 +66,7 @@
 			</Panel>
 
 			<Panel Grid.Column="2" Grid.Row="1" Margin="10">
-				<Image Name="imageView" MinWidth="200"/>
-				<!--<Image Source="avares://Keyer/Assets/auto-insert-in.png"/>-->
+				<Image Source="{Binding File}"/>
 			</Panel>
 			<Panel Grid.Column="4" Grid.Row="1" Margin="10">
 				<Image Source="avares://Keyer/Assets/auto-insert-out.png"/>
@@ -92,6 +86,9 @@
 					</StackPanel>
 				</Button>
 			</Panel>
+			
+			<ListBox Grid.Column="2" Grid.Row="4" ItemsSource="{Binding ErrorMessages}"/>
+			
 			<Panel Grid.Column="2" Grid.Row="2"  
 				   VerticalAlignment="Center"
 				   HorizontalAlignment="Center">
