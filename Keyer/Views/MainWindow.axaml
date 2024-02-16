@@ -29,7 +29,7 @@
 			</ExperimentalAcrylicBorder.Material>
 		</ExperimentalAcrylicBorder>
 		
-		<Grid ShowGridLines="true">
+		<Grid>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="60"/>
 				<ColumnDefinition Width="40"/>
@@ -45,23 +45,6 @@
 				<RowDefinition Height="80"/>
 			</Grid.RowDefinitions>
 			
-			<Panel Grid.Column="0" Margin="10">
-				<StackPanel>
-					<Button>
-						<PathIcon Data="{StaticResource image_regular}" />
-					</Button>
-					<Button>
-						<PathIcon Data="{StaticResource folder_open_vertical_regular}" />
-					</Button>
-					<Button>
-						<PathIcon Data="{StaticResource history_regular}" />
-					</Button>
-					<Button>
-						<PathIcon Data="{StaticResource settings_regular}" />
-					</Button>
-				</StackPanel>
-			</Panel>
-
 			<Panel Grid.Column="2" Grid.Row="1" Margin="10">
 				<Image Source="{Binding LoadedFile}"/>
 			</Panel>
@@ -85,7 +68,7 @@
 				</Button>
 			</Panel>
 			
-			<ListBox Grid.Column="2" Grid.Row="4" ItemsSource="{Binding ErrorMessages}"/>
+			<ListBox Grid.Column="2" Grid.Row="4" ItemsSource="{Binding ErrorMessages}" Background="Transparent"/>
 			
 			<Panel Grid.Column="2" Grid.Row="2"  
 				   VerticalAlignment="Center"
@@ -106,8 +89,8 @@
 			<Panel Grid.Column="4" Grid.Row="2"
 				   VerticalAlignment="Center"
 				   HorizontalAlignment="Center">
-				<Button Padding="10">
-					<!--Command="{Binding SaveFileCommand}"-->
+				<Button Padding="10"
+						Command="{Binding SaveFileCommand}">
 					<StackPanel Orientation="Horizontal">
 						<PathIcon Data="{StaticResource heart_regular}" />
 						<TextBlock Text="save edited png"

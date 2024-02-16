@@ -1,17 +1,18 @@
-﻿using System.Threading.Tasks;
-using Avalonia.Controls;
+﻿using Avalonia.Controls;
 using Avalonia.Platform.Storage;
-using Keyer.Helpers;
+using System.Threading.Tasks;
 
 namespace Keyer.Services
 {
     public class FilesService : IFilesService
     {
         private readonly Window _target;
+        //private readonly FilePickerFileType _fileType;
 
-        public FilesService(Window target)
+        public FilesService(Window target)/*, FilePickerFileType fileType)*/
         {
             _target = target;
+            //_fileType = fileType;
         }
 
         public async Task<IStorageFile?> OpenFileAsync()
@@ -20,6 +21,7 @@ namespace Keyer.Services
             {
                 Title = "Open PNG File",
                 AllowMultiple = false,
+                //FileTypeFilter = new[] { _fileType, FilePickerFileTypes.TextPlain }
             });
 
             return files.Count >= 1 ? files[0] : null;

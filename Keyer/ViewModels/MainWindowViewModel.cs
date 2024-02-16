@@ -100,5 +100,28 @@ namespace Keyer.ViewModels
                 ErrorMessages?.Add(e.Message);
             }
         }
+
+        [RelayCommand]
+        private async Task SaveFile()
+        {
+            ErrorMessages?.Clear();
+            try
+            {
+                var filesService = App.Current?.Services?.GetService<IFilesService>();
+                if (filesService is null) throw new NullReferenceException("Missing File Service instance.");
+
+                var file = await filesService.SaveFileAsync();
+                if (file is null) return;
+
+                using (var writeStream = await file.OpenWriteAsync())
+                {
+                    ModifiedFile?.Save(writeStream);
+                }
+            }
+            catch (Exception e)
+            {
+                ErrorMessages?.Add(e.Message);
+            }
+        }
     }
 }
